@@ -29,8 +29,12 @@ end
 
 get "/students/:id/modify" do
   student = Student.find(params[:id])
-
-  student_hash = student.to_hash
+  
+  student.change_age
+  student.update
+  
+  studentnew = Student.find(params[:id])
+  student_hash = studentnew.to_hash
   student_hash.to_json
 end
 

@@ -1,3 +1,8 @@
+require 'pry'
+require 'sqlite3'
+# DATABASE = SQLite3::Database.new("students.db")
+# DATABASE.results_as_hash = true
+
 class Student
   attr_reader :id
   
@@ -10,6 +15,10 @@ class Student
     @github = options["github"]
   end
   
+  def change_age
+    @age = 1000
+  end
+  
   def can_drink?
     age >= 200
   end
@@ -20,6 +29,10 @@ class Student
   
   def github_link
     "http://github.com/#{github}"
+  end
+  
+  def update
+    DATABASE.execute("UPDATE students SET age = #{@age} WHERE id = #{@id}")
   end
   
   # Public: Get a list of all students from the database.
@@ -52,3 +65,5 @@ class Student
     }
   end
 end
+
+binding.pry
