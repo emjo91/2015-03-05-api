@@ -18,6 +18,13 @@ get "/students" do
   students_hash.to_json
 end
 
+get "/students/create" do
+  student = Student.new({"name"=>"Nemo", "age"=>27, "github"=>"butt"})
+  student.insert
+  student_hash = student.to_hash
+  student_hash.to_json
+end
+
 get "/students/:id" do
   student = Student.find(params[:id])
 
@@ -38,9 +45,7 @@ get "/students/:id/modify" do
   student_hash.to_json
 end
 
-get "/students/create" do
-  
-end
+
 
 # - Add a route that modifies a student record. There's no need for a page that shows a form for editing. We're just working with request paths directly. (Use 'get' instead of 'post' to make it easier to check that things work. Once it's working, change it to 'post'.)
 
