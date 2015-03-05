@@ -32,6 +32,13 @@ get "/students/:id" do
   student_hash.to_json
 end
 
+# In JS, make an if-else is true, so-so is wise...if false...not so wise.
+get "/students/:id/ultrawise" do
+  student = Student.find(params[:id])
+  boolean = student.ultra_wise?
+  boolean.to_s
+end
+
 # Afternoon Assignment:
 
 get "/students/:id/modify" do
