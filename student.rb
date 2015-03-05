@@ -1,7 +1,7 @@
 require 'pry'
 require 'sqlite3'
-# DATABASE = SQLite3::Database.new("students.db")
-# DATABASE.results_as_hash = true
+DATABASE = SQLite3::Database.new("students.db")
+DATABASE.results_as_hash = true
 
 class Student
   attr_reader :id
@@ -29,6 +29,11 @@ class Student
   
   def github_link
     "http://github.com/#{github}"
+  end
+  
+  def insert
+    DATABASE.execute("INSERT INTO students (age, name, github) VALUES ('#{@name}', #{@age}, '#{@github}')")
+    @id = DATABASE.last_insert_row_id
   end
   
   def update
@@ -65,3 +70,5 @@ class Student
     }
   end
 end
+
+binding.pry
