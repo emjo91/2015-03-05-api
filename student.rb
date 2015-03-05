@@ -65,5 +65,3 @@ class Student
     }
   end
 end
-
-binding.pry
