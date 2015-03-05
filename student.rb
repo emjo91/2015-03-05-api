@@ -40,6 +40,10 @@ class Student
     DATABASE.execute("UPDATE students SET age = #{@age} WHERE id = #{@id}")
   end
   
+  def self.delete(id)
+    DATABASE.execute("DELETE FROM students where id = #{id}")
+  end
+  
   # Public: Get a list of all students from the database.
   #
   # Returns an Array of Student objects.
