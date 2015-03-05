@@ -37,6 +37,7 @@ get "/students/:id/ultrawise" do
   student = Student.find(params[:id])
   boolean = student.ultra_wise?
   boolean.to_s
+  student.github_link
 end
 
 # In JS, make an if-else is true, so-so is wise...if false...not so wise.
@@ -44,6 +45,8 @@ get "/students/:id/drink" do
   student = Student.find(params[:id])
   boolean = student.can_drink?
   boolean.to_s
+  student.github_link
+  
 end
 
 # Afternoon Assignment:
