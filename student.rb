@@ -1,5 +1,7 @@
 class Student
-  attr_reader :id, :age, :name, :github
+  attr_reader :id
+  
+  attr_accessor :age, :name, :github
   
   def initialize(options)
     @id = options["id"]
