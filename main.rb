@@ -32,6 +32,7 @@ get "/students/:id" do
   student_hash.to_json
 end
 
+# This route has been rendered obsolete by changes to the .to_hash method in student.rb
 # In JS, make an if-else is true, so-so is wise...if false...not so wise.
 get "/students/:id/ultrawise" do
   student = Student.find(params[:id])
@@ -40,6 +41,7 @@ get "/students/:id/ultrawise" do
   student.github_link
 end
 
+# This route has been rendered obsolete by changes to the .to_hash method in student.rb
 # In JS, make an if-else is true, so-so is wise...if false...not so wise.
 get "/students/:id/drink" do
   student = Student.find(params[:id])

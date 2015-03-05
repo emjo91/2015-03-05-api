@@ -70,8 +70,9 @@ class Student
       id: id,
       name: name,
       age: age,
-      github: github
+      github: github_link,
+      can_drink: can_drink?,
+      ultra_wise: ultra_wise?
     }
   end
 end
-
