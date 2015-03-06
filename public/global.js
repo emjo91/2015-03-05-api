@@ -7,7 +7,7 @@ function createStudent() {
   var request = new XMLHttpRequest;
   request.open("get", "http://localhost:4567/students/create");
   request.send();
-  alert(request);
+  alert("Created Student!");
 }
 
 command.addEventListener("click", createStudent);
