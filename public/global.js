@@ -23,10 +23,15 @@ window.onload = function () {
     
     request.open("get", query);
     request.send();
+    
+    request.addEventListener("load", function() { 
+    
       var result = JSON.parse(request.response);
       var age = result.age.toString();
     
     alert("Student's age modified to: " + age );
+  } ) // end of the work done after send loads
+  
   } //end of modifyStudent
   
 
