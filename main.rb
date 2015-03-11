@@ -1,3 +1,6 @@
+require 'gemfile'
+require 'bundler/setup'
+
 require "sinatra"
 require 'json'
 require "sqlite3"
